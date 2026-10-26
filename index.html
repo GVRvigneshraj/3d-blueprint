@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Blueprint House Visualization</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        overflow: hidden;
+        background: #0a0a0f;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      #root {
+        width: 100vw;
+        height: 100vh;
+      }
+      .ui-panel {
+        position: fixed;
+        background: rgba(15, 15, 25, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 8px;
+        color: #e0e0e0;
+      }
+      .top-toolbar {
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+      }
+      .left-panel {
+        top: 120px;
+        left: 20px;
+        bottom: 20px;
+        width: 220px;
+        z-index: 100;
+      }
+      .right-panel {
+        top: 120px;
+        right: 20px;
+        bottom: 20px;
+        width: 260px;
+        z-index: 100;
+      }
+      .bottom-toolbar {
+        bottom: 0;
+        left: 20px;
+        right: 20px;
+        height: 50px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        z-index: 100;
+        padding-top: 8px;
+      }
+      button {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #e0e0e0;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      button:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+      button:focus {
+        outline: 2px solid #4a90e2;
+        outline-offset: 2px;
+      }
+      .panel-title {
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: #888;
+      }
+      .room-list-item {
+        padding: 8px 12px;
+        margin: 4px 0;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 13px;
+        transition: background 0.2s;
+      }
+      .room-list-item:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .room-list-item.selected {
+        background: rgba(74, 144, 226, 0.3);
+        color: #4a90e2;
+      }
+      .dimension-overlay {
+        font-size: 11px;
+        color: #ffd700;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 2px 6px;
+        border-radius: 4px;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
